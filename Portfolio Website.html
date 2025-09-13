@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rashi's Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --fg: #f8fafc;
+      --muted: #a7b0c0;
+      --brand: #38bdf8;
+      --card-bg: #1e293b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: 90%; max-width: 1000px; margin: 0 auto; padding: 2rem 0; }
+    .section-title { font-size: 2rem; margin-bottom: .5rem; }
+    .section-desc { color: var(--muted); margin-bottom: 2rem; }
+
+    header {
+      background: var(--card-bg);
+      padding: 1rem 0;
+      position: sticky; top: 0;
+      z-index: 100;
+    }
+    nav.container { display: flex; justify-content: space-between; align-items: center; }
+    nav h1 { font-size: 1.25rem; color: var(--brand); }
+    nav ul { list-style: none; display: flex; gap: 1rem; }
+    nav li a { color: var(--fg); font-weight: 500; }
+
+    .hero { min-height: 80vh; display: grid; place-items: center; text-align: center; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { color: var(--muted); max-width: 600px; margin: 0 auto 1.5rem; }
+    .btn {
+      display: inline-block; padding: .75rem 1.5rem; border-radius: .5rem;
+      background: var(--brand); color: var(--bg); font-weight: 600;
+    }
+
+    .grid { display: grid; gap: 1.5rem; }
+    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: .75rem;
+      transition: transform .2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card img { border-radius: .5rem; margin-bottom: 1rem; }
+
+    form { display: grid; gap: 1rem; max-width: 500px; }
+    input, textarea {
+      padding: .75rem; border-radius: .5rem;
+      border: 1px solid #334155; background: #0f172a; color: var(--fg);
+    }
+    button {
+      padding: .75rem 1.5rem; border-radius: .5rem;
+      border: none; background: var(--brand); color: var(--bg); font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--muted);
+      background: var(--card-bg);
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <nav class="container">
+      <h1>Rashi's Portfolio</h1>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <main id="home" class="hero container">
+    <div>
+      <h1>Hi, I’m <span style="color:var(--brand)">Rashi</span></h1>
+      <p>
+        Welcome to my portfolio! I’ve created this space to showcase my projects and skills using HTML, CSS, and JavaScript. 
+        I enjoy building clean, responsive websites that focus on simplicity and performance.
+      </p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </main>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-desc">Some of my work and practice projects.</p>
+    <div class="grid projects-grid">
+      <div class="card">
+        <img src="https://picsum.photos/400/200?portfolio" alt="Portfolio Website">
+        <h3>Portfolio Website</h3>
+        <p>A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/200?amazon" alt="Amazon Clone">
+        <h3>Amazon Clone</h3>
+        <p>A simple Amazon homepage clone created using HTML and CSS for practice and learning layout design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-desc">A little bit about what I do and what I use.</p>
+    <div class="grid projects-grid">
+      <div class="card">
+        <h3>What I Do</h3>
+        <p>I design and build websites with semantic HTML, modern CSS, and JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>Tech I Use</h3>
+        <p>HTML, CSS, JS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-desc">Send me a message below:</p>
+    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+      <input type="text" placeholder="Your name" required>
+      <input type="email" placeholder="Your email" required>
+      <textarea rows="5" placeholder="Your message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© <span id="year"></span> Made by Rashi</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
