@@ -1,160 +1,621 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rashi's Portfolio</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --fg: #f8fafc;
-      --muted: #a7b0c0;
-      --brand: #38bdf8;
-      --card-bg: #1e293b;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
+<title>Rashi Srivastava | Portfolio</title>
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+<style>
 
-    .container { width: 90%; max-width: 1000px; margin: 0 auto; padding: 2rem 0; }
-    .section-title { font-size: 2rem; margin-bottom: .5rem; }
-    .section-desc { color: var(--muted); margin-bottom: 2rem; }
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#f8fafc;
+  --muted:#94a3b8;
+  --primary:#38bdf8;
+  --secondary:#818cf8;
+  --pink:#ec4899;
+}
 
-    header {
-      background: var(--card-bg);
-      padding: 1rem 0;
-      position: sticky; top: 0;
-      z-index: 100;
-    }
-    nav.container { display: flex; justify-content: space-between; align-items: center; }
-    nav h1 { font-size: 1.25rem; color: var(--brand); }
-    nav ul { list-style: none; display: flex; gap: 1rem; }
-    nav li a { color: var(--fg); font-weight: 500; }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    .hero { min-height: 80vh; display: grid; place-items: center; text-align: center; }
-    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { color: var(--muted); max-width: 600px; margin: 0 auto 1.5rem; }
-    .btn {
-      display: inline-block; padding: .75rem 1.5rem; border-radius: .5rem;
-      background: var(--brand); color: var(--bg); font-weight: 600;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .grid { display: grid; gap: 1.5rem; }
-    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .card {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: .75rem;
-      transition: transform .2s;
-    }
-    .card:hover { transform: translateY(-4px); }
-    .card img { border-radius: .5rem; margin-bottom: 1rem; }
+body{
+  font-family:system-ui,sans-serif;
+  background:
+  radial-gradient(circle at top,
+  #1e293b,
+  #0f172a);
+  color:var(--text);
+  line-height:1.7;
+}
 
-    form { display: grid; gap: 1rem; max-width: 500px; }
-    input, textarea {
-      padding: .75rem; border-radius: .5rem;
-      border: 1px solid #334155; background: #0f172a; color: var(--fg);
-    }
-    button {
-      padding: .75rem 1.5rem; border-radius: .5rem;
-      border: none; background: var(--brand); color: var(--bg); font-weight: 600;
-      cursor: pointer;
-    }
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      color: var(--muted);
-      background: var(--card-bg);
-    }
-  </style>
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(15px);
+  background:rgba(15,23,42,.8);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 0;
+}
+
+.logo{
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--primary);
+}
+
+nav ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.profile-img{
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:auto;
+  margin-bottom:25px;
+  border:4px solid var(--primary);
+  box-shadow:
+  0 0 30px rgba(56,189,248,.4),
+  0 0 60px rgba(56,189,248,.2);
+}
+
+.hero h1{
+  font-size:4rem;
+  background:
+  linear-gradient(
+  90deg,
+  var(--primary),
+  var(--secondary),
+  var(--pink));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:10px;
+}
+
+.hero-role{
+  color:var(--primary);
+  margin-bottom:20px;
+  font-size:1.3rem;
+}
+
+.hero p{
+  max-width:750px;
+  margin:auto;
+  color:var(--muted);
+}
+
+.hero-buttons{
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:12px;
+  background:var(--primary);
+  color:#000;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn-secondary{
+  margin-left:10px;
+  background:transparent;
+  color:white;
+  border:1px solid var(--primary);
+}
+
+.stats{
+  margin-top:50px;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(10px);
+  padding:20px 30px;
+  border-radius:16px;
+  min-width:140px;
+}
+
+.stat h3{
+  color:var(--primary);
+  font-size:2rem;
+}
+
+section{
+  padding:100px 0;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+
+.section-desc{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:50px;
+}
+
+.grid{
+  display:grid;
+  gap:25px;
+}
+
+.two-grid{
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+}
+
+.card{
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(12px);
+  padding:30px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.card h3{
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+}
+
+.skill{
+  padding:12px 22px;
+  border-radius:999px;
+  border:1px solid var(--primary);
+  background:rgba(56,189,248,.08);
+}
+.tech{
+margin-top:15px;
+color:var(--muted);
+font-size:.9rem;
+}
+
+.projects{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+}
+
+.project-card h3{
+color:var(--primary);
+margin-bottom:12px;
+}
+
+.contact-box{
+max-width:700px;
+margin:auto;
+background:rgba(255,255,255,.05);
+padding:40px;
+border-radius:20px;
+text-align:center;
+}
+
+.contact-box a{
+color:var(--primary);
+}
+
+footer{
+text-align:center;
+padding:40px 20px;
+margin-top:50px;
+border-top:1px solid rgba(255,255,255,.08);
+color:var(--muted);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <!-- ===== Header ===== -->
-  <header>
-    <nav class="container">
-      <h1>Rashi's Portfolio</h1>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- ===== Hero ===== -->
-  <main id="home" class="hero container">
-    <div>
-      <h1>Hi, I’m <span style="color:var(--brand)">Rashi</span></h1>
-      <p>
-        Welcome to my portfolio! I’ve created this space to showcase my projects and skills using HTML, CSS, and JavaScript. 
-        I enjoy building clean, responsive websites that focus on simplicity and performance.
-      </p>
-      <a href="#projects" class="btn">View Projects</a>
-    </div>
-  </main>
+<header>
+<div class="container">
+<nav>
 
-  <!-- ===== Projects ===== -->
-  <section id="projects" class="container">
-    <h2 class="section-title">Projects</h2>
-    <p class="section-desc">Some of my work and practice projects.</p>
-    <div class="grid projects-grid">
-      <div class="card">
-        <img src="https://picsum.photos/400/200?portfolio" alt="Portfolio Website">
-        <h3>Portfolio Website</h3>
-        <p>A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my skills and projects.</p>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/400/200?amazon" alt="Amazon Clone">
-        <h3>Amazon Clone</h3>
-        <p>A simple Amazon homepage clone created using HTML and CSS for practice and learning layout design.</p>
-      </div>
-    </div>
-  </section>
+<div class="logo">
+Rashi Srivastava
+</div>
 
-  <!-- ===== About ===== -->
-  <section id="about" class="container">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-desc">A little bit about what I do and what I use.</p>
-    <div class="grid projects-grid">
-      <div class="card">
-        <h3>What I Do</h3>
-        <p>I design and build websites with semantic HTML, modern CSS, and JavaScript.</p>
-      </div>
-      <div class="card">
-        <h3>Tech I Use</h3>
-        <p>HTML, CSS, JS</p>
-      </div>
-    </div>
-  </section>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-  <!-- ===== Contact ===== -->
-  <section id="contact" class="container">
-    <h2 class="section-title">Get in Touch</h2>
-    <p class="section-desc">Send me a message below:</p>
-    <form onsubmit="event.preventDefault(); alert('Message sent!');">
-      <input type="text" placeholder="Your name" required>
-      <input type="email" placeholder="Your email" required>
-      <textarea rows="5" placeholder="Your message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+</nav>
+</div>
+</header>
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    <p>© <span id="year"></span> Made by Rashi</p>
-  </footer>
+<section class="hero">
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<div class="container">
+
+<img src="profile.jpg"
+alt="Rashi Srivastava"
+class="profile-img">
+
+<h1>Rashi Srivastava</h1>
+
+<div class="hero-role">
+Aspiring Software Engineer
+</div>
+
+<p>
+Final-year B.Tech student passionate about building web applications,
+AI-powered products, and cloud solutions.
+
+Interested in Software Development, Cloud Computing,
+and creating impactful digital experiences through technology.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn">
+View Projects
+</a>
+
+<a href="resume.pdf" class="btn btn-secondary">
+Resume
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>4+</h3>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h3>3</h3>
+<p>Leadership Roles</p>
+</div>
+
+<div class="stat">
+<h3>AWS</h3>
+<p>Cloud Focus</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<p class="section-desc">
+A quick introduction about who I am.
+</p>
+
+<div class="grid two-grid">
+
+<div class="card">
+<h3>Who I Am</h3>
+<p>
+Final-year B.Tech student interested in Software Development,
+Cloud Computing, and AI-powered applications.
+</p>
+</div>
+
+<div class="card">
+<h3>Current Focus</h3>
+<p>
+Building impactful products like Synapto and Neurix while
+strengthening development and cloud computing skills.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">
+Skills
+</h2>
+
+<p class="section-desc">
+Technologies and tools I work with.
+</p>
+
+<div class="skills">
+
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Java</div>
+<div class="skill">Python</div>
+<div class="skill">Git</div>
+<div class="skill">GitHub</div>
+<div class="skill">AWS</div>
+<div class="skill">Data Structures</div>
+<div class="skill">Algorithms</div>
+<div class="skill">Object Oriented Programming</div>
+<div class="skill">Problem Solving</div>
+<div class="skill">Responsive Design</div>
+<div class="skill">REST APIs</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<div class="container">
+
+<h2 class="section-title">
+Experience
+</h2>
+
+<div class="grid two-grid">
+
+<div class="card">
+<h3>Content Head</h3>
+<p>Vyoumauts Club</p>
+<p>2025</p>
+</div>
+
+<div class="card">
+<h3>Web Development Team Member</h3>
+<p>GDGOC PSIT Kanpur</p>
+<p>2024 - 2025</p>
+</div>
+
+<div class="card">
+<h3>Singing Head</h3>
+<p>Navrang Club</p>
+<p>2024 - 2025</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">
+Projects
+</h2>
+
+<p class="section-desc">
+Some of my featured work.
+</p>
+
+<div class="projects">
+
+<div class="project-card">
+
+<h3>Synapto</h3>
+
+<p>
+AI-powered productivity platform focused on intelligent
+task management, focus tracking, and workflow optimization.
+</p>
+
+<div class="tech">
+React • Node.js • MongoDB • AWS
+</div>
+
+</div>
+
+<div class="project-card">
+
+<h3>Neurix</h3>
+
+<p>
+AI-powered learning and knowledge platform designed
+to improve learning experiences and knowledge organization.
+</p>
+
+<div class="tech">
+JavaScript • AI • Web Development
+</div>
+
+</div>
+
+<div class="project-card">
+
+<h3>Portfolio Website</h3>
+
+<p>
+Responsive personal portfolio showcasing projects,
+skills, experience, and achievements.
+</p>
+
+<div class="tech">
+HTML • CSS • JavaScript
+</div>
+
+</div>
+
+<div class="project-card">
+
+<h3>Amazon Clone</h3>
+
+<p>
+Frontend e-commerce interface built using HTML and CSS
+for responsive design practice.
+</p>
+
+<div class="tech">
+HTML • CSS
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+Get In Touch
+</h2>
+
+<p class="section-desc">
+Feel free to connect with me.
+</p>
+
+<div class="contact-box">
+
+<p>📧 rashisrivastava.works@gmail.com</p>
+
+<br>
+
+<p>
+💻
+<a href="https://github.com/RashiSri25" target="_blank">
+github.com/RashiSri25
+</a>
+</p>
+
+<br>
+
+<p>
+🔗
+<a href="https://www.linkedin.com/in/rashi-srivastava25" target="_blank">
+linkedin.com/in/rashi-srivastava25
+</a>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© <span id="year"></span> Rashi Srivastava
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
+
 </body>
 </html>
